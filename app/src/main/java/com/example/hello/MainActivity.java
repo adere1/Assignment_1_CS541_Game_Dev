@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 label3.setVisibility(View.VISIBLE);
                 label3.setText("Welcome  to  CS541  "+text1.getText());
                 label4.setVisibility(View.VISIBLE);
-                label4.setText(text1.getText()+"  Like  "+text2.getText());
+                label4.setText(text1.getText()+"  Likes  "+text2.getText());
                 button1.setVisibility(View.VISIBLE);
                 button.setVisibility(View.INVISIBLE);
 
