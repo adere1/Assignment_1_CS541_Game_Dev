@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        TextView label2 = findViewById(R.id.textView);
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -31,12 +31,45 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button button = findViewById(R.id.button);
+        final TextView label1 = findViewById(R.id.textView);
+        final TextView label2 = findViewById(R.id.textView1);
+        final EditText text1 = findViewById(R.id.editText);
+        final EditText text2 = findViewById(R.id.editText1);
+        final TextView label3 = findViewById(R.id.label3);
+        final TextView label4 = findViewById(R.id.label4);
+        final Button button = findViewById(R.id.button);
+        final Button button1 = findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView label1 = findViewById(R.id.label1);
                 label1.setVisibility(View.INVISIBLE);
+                label2.setVisibility(View.INVISIBLE);
+                text1.setVisibility(View.INVISIBLE);
+                text2.setVisibility(View.INVISIBLE);
+                label3.setVisibility(View.VISIBLE);
+                label3.setText("Welcome  to  CS541  "+text1.getText());
+                label4.setVisibility(View.VISIBLE);
+                label4.setText(text1.getText()+"  Like  "+text2.getText());
+                button1.setVisibility(View.VISIBLE);
+                button.setVisibility(View.INVISIBLE);
+
+            }
+        });
+
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                label1.setVisibility(View.VISIBLE);
+                label2.setVisibility(View.VISIBLE);
+                text1.setVisibility(View.VISIBLE);
+                text1.setText("");
+                text2.setVisibility(View.VISIBLE);
+                text2.setText("");
+                label3.setVisibility(View.INVISIBLE);
+                label4.setVisibility(View.INVISIBLE);
+                button1.setVisibility(View.INVISIBLE);
+                button.setVisibility(View.VISIBLE);
             }
         });
 
